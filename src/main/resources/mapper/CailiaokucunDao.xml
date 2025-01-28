@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CailiaokucunDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CailiaokucunEntity" id="cailiaokucunMap">
+        <result property="cailiaomingcheng" column="cailiaomingcheng"/>
+        <result property="cailiaoleixing" column="cailiaoleixing"/>
+        <result property="kucun" column="kucun"/>
+        <result property="cunfangweizhi" column="cunfangweizhi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CailiaokucunVO" >
+		SELECT * FROM cailiaokucun  cailiaokucun         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CailiaokucunVO" >
+		SELECT  cailiaokucun.* FROM cailiaokucun  cailiaokucun 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CailiaokucunView" >
+
+		SELECT  cailiaokucun.* FROM cailiaokucun  cailiaokucun 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CailiaokucunView" >
+		SELECT * FROM cailiaokucun  cailiaokucun <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
